@@ -8,3 +8,7 @@ from .serializers import WorksSerializer
 class WorksList(generics.ListCreateAPIView):
     queryset = Works.objects.all()
     serializer_class = WorksSerializer
+
+class WorksDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Works.objects.get_queryset()
+    serializer_class = WorksSerializer
